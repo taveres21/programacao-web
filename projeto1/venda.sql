@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2024 at 09:16 AM
--- Server version: 10.4.32-MariaDB
--- PHP Version: 8.2.12
+-- Tempo de geração: 19/04/2024 às 20:28
+-- Versão do servidor: 10.4.28-MariaDB
+-- Versão do PHP: 8.2.4
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,26 +18,42 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `venda`
+-- Banco de dados: `venda`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cliente`
+-- Estrutura para tabela `cliente`
 --
 
 CREATE TABLE `cliente` (
   `id` int(11) NOT NULL,
   `nome` varchar(40) DEFAULT NULL,
   `cpf` int(11) DEFAULT NULL,
-  `ativo` int(11) DEFAULT NULL
+  `ativo` varchar(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `cliente`
+--
+
+INSERT INTO `cliente` (`id`, `nome`, `cpf`, `ativo`) VALUES
+(1, 'teste', NULL, NULL),
+(2, 'teste', NULL, NULL),
+(3, 'teste', NULL, NULL),
+(4, 'teste', NULL, NULL),
+(5, '45345', 0, NULL),
+(6, '4234', 23423, NULL),
+(7, 'teste', 0, NULL),
+(8, 'teste', 0, NULL),
+(9, 'teste', 0, NULL),
+(10, 'teste1', 0, NULL);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pedido`
+-- Estrutura para tabela `pedido`
 --
 
 CREATE TABLE `pedido` (
@@ -51,7 +67,7 @@ CREATE TABLE `pedido` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pedidoitem`
+-- Estrutura para tabela `pedidoitem`
 --
 
 CREATE TABLE `pedidoitem` (
@@ -64,7 +80,7 @@ CREATE TABLE `pedidoitem` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `produto`
+-- Estrutura para tabela `produto`
 --
 
 CREATE TABLE `produto` (
@@ -75,24 +91,24 @@ CREATE TABLE `produto` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
--- Indexes for dumped tables
+-- Índices para tabelas despejadas
 --
 
 --
--- Indexes for table `cliente`
+-- Índices de tabela `cliente`
 --
 ALTER TABLE `cliente`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `pedido`
+-- Índices de tabela `pedido`
 --
 ALTER TABLE `pedido`
   ADD PRIMARY KEY (`id`),
   ADD KEY `id_cliente` (`id_cliente`);
 
 --
--- Indexes for table `pedidoitem`
+-- Índices de tabela `pedidoitem`
 --
 ALTER TABLE `pedidoitem`
   ADD PRIMARY KEY (`id`),
@@ -100,51 +116,51 @@ ALTER TABLE `pedidoitem`
   ADD KEY `id_produto` (`id_produto`);
 
 --
--- Indexes for table `produto`
+-- Índices de tabela `produto`
 --
 ALTER TABLE `produto`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT para tabelas despejadas
 --
 
 --
--- AUTO_INCREMENT for table `cliente`
+-- AUTO_INCREMENT de tabela `cliente`
 --
 ALTER TABLE `cliente`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `pedido`
+-- AUTO_INCREMENT de tabela `pedido`
 --
 ALTER TABLE `pedido`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `pedidoitem`
+-- AUTO_INCREMENT de tabela `pedidoitem`
 --
 ALTER TABLE `pedidoitem`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `produto`
+-- AUTO_INCREMENT de tabela `produto`
 --
 ALTER TABLE `produto`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- Constraints for dumped tables
+-- Restrições para tabelas despejadas
 --
 
 --
--- Constraints for table `pedido`
+-- Restrições para tabelas `pedido`
 --
 ALTER TABLE `pedido`
   ADD CONSTRAINT `pedido_ibfk_1` FOREIGN KEY (`id_cliente`) REFERENCES `cliente` (`id`);
 
 --
--- Constraints for table `pedidoitem`
+-- Restrições para tabelas `pedidoitem`
 --
 ALTER TABLE `pedidoitem`
   ADD CONSTRAINT `pedidoitem_ibfk_1` FOREIGN KEY (`id_pedido`) REFERENCES `pedido` (`id`),

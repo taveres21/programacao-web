@@ -18,7 +18,7 @@ class ProdutoController
 
     public function inserir($params)
     {
-        require_once ("../src/Views/Produto/Adicionar.php");
+        require_once ("../src/Views/produto/Adicionar.php");
     }
 
 

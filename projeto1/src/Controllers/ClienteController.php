@@ -26,11 +26,11 @@ class ClienteController
         $clienteDAO = new ClienteDAO();
         if ($clienteDAO->inserir($cliente)) {
             $sucesso = "Inserido com sucesso!";
-            header("Location: /cliente/visualizar?sucesso=" . urlencode($sucesso));
+            header("Location: /Cliente/visualizar?sucesso=" . urlencode($sucesso));
             exit;
         } else {
             $falha = "Erro ao inserir!";
-            header("Location: /cliente/visualizar?falha=" . urlencode($falha));
+            header("Location: /Cliente/visualizar?falha=" . urlencode($falha));
             exit;
         }
     }

@@ -30,7 +30,7 @@ class Pedido{
         return $this->id;
     }
 
-    public function setId_Cliente($id){
+    public function setId_Cliente($id_cliente){
         $this->id_cliente = $id_cliente;
     }
 
