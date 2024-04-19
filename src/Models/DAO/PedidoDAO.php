@@ -1,9 +1,9 @@
 <?php
 
-namespace Php\ProjetoBanco\Models\DAO;
+namespace Php\Projeto\Models\DAO;
 
 
-use Php\ProjetoBanco\Models\Domain\Pedido;
+use Php\Projeto\Models\Domain\Pedido;
 
 
 class PedidoDAO{

@@ -1,9 +1,9 @@
 <?php
 
-namespace Php\ProjetoBanco\Controllers;
+namespace Php\Projeto\Controllers;
 
-use Php\ProjetoBanco\Models\DAO\PedidoDAO;
-use Php\ProjetoBanco\Models\Domain\Pedido;
+use Php\Projeto\Models\DAO\PedidoDAO;
+use Php\Projeto\Models\Domain\Pedido;
 
 class PedidoController
 {

@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\ProjetoBanco\Models\Domain;
+namespace Php\Projeto\Models\Domain;
 
 class Cliente{
 

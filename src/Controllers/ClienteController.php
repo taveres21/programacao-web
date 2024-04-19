@@ -1,9 +1,9 @@
 <?php
 
-namespace Php\ProjetoBanco\Controllers;
+namespace Php\Projeto\Controllers;
 
-use Php\ProjetoBanco\Models\DAO\ClienteDAO;
-use Php\ProjetoBanco\Models\Domain\Cliente;
+use Php\Projeto\Models\DAO\ClienteDAO;
+use Php\Projeto\Models\Domain\Cliente;
 
 
 class ClienteController

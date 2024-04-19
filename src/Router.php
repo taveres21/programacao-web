@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\ProjetoBanco;
+namespace Php\Projeto;
 
 class Router
 {

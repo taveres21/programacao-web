@@ -1,8 +1,8 @@
 <?php
 
-namespace Php\ProjetoBanco\Models\Domain;
+namespace Php\Projeto\Models\Domain;
 
-class matricula{
+class PedidoItem{
 
     private $id;
     private $id_pedido;

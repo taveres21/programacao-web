@@ -6,49 +6,49 @@ require __DIR__ ."/vendor/autoload.php";
 $metodo = $_SERVER['REQUEST_METHOD'];
 $caminho = $_SERVER['PATH_INFO'] ?? '/';
 
-$r = new Php\ProjetoBanco\Router($metodo, $caminho);
+$r = new Php\Projeto\Router($metodo, $caminho);
 
 
-$r->get('/', 'Php\ProjetoBanco\Controllers\HomeController@index');
+$r->get('/', 'Php\Projeto\Controllers\HomeController@index');
 
 
 $r->get('/Cliente/inserir',
-    'Php\ProjetoBanco\Controllers\ClienteController@inserir');
+    'Php\Projeto\Controllers\ClienteController@inserir');
 
 $r->post('/Cliente/novo',
-    'Php\ProjetoBanco\Controllers\ClienteController@novo');
+    'Php\Projeto\Controllers\ClienteController@novo');
 
 $r->get('/Cliente/visualizar',
-    'Php\ProjetoBanco\Controllers\ClienteController@index');
+    'Php\Projeto\Controllers\ClienteController@index');
 
 $r->get('/Pedido/inserir',
-    'Php\ProjetoBanco\Controllers\PedidoController@inserir');
+    'Php\Projeto\Controllers\PedidoController@inserir');
 
 $r->post('/Pedido/novo',
-    'Php\ProjetoBanco\Controllers\PedidoController@novo');
+    'Php\Projeto\Controllers\PedidoController@novo');
 
 $r->get('/Pedido/visualizar',
-    'Php\ProjetoBanco\Controllers\PedidoController@index');
+    'Php\Projeto\Controllers\PedidoController@index');
 
 
 $r->get('/PedidoItem/inserir',
-    'Php\ProjetoBanco\Controllers\PedidoItemController@inserir');
+    'Php\Projeto\Controllers\PedidoItemController@inserir');
 
 $r->post('/PedidoItem/novo',
-    'Php\ProjetoBanco\Controllers\PedidoItemController@novo');
+    'Php\Projeto\Controllers\PedidoItemController@novo');
 
 $r->get('/PedidoItem/visualizar',
-    'Php\ProjetoBanco\Controllers\PedidoItemController@index');
+    'Php\Projeto\Controllers\PedidoItemController@index');
 
 
 $r->get('/Produto/inserir',
-    'Php\ProjetoBanco\Controllers\ProdutoController@inserir');
+    'Php\Projeto\Controllers\ProdutoController@inserir');
 
 $r->post('/Produto/novo',
-    'Php\ProjetoBanco\Controllers\ProdutoController@novo');
+    'Php\Projeto\Controllers\ProdutoController@novo');
 
 $r->get('/Produto/visualizar',
-    'Php\ProjetoBanco\Controllers\ProdutoController@index');
+    'Php\Projeto\Controllers\ProdutoController@index');
 
 
 $resultado = $r->handler();

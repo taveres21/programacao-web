@@ -10,7 +10,7 @@
       <a class="btn btn-secondary mt-3 ms-3" href="/">Inicio</a>
       <main class="container">
         <h1>Inserir Item do Pedido</h1>
-        <form action="/professor/novo" method="post">
+        <form action="/pedidoitem/novo" method="post">
             <div class="row">
                 <div class="col-6">
                     <label for="id_pedido" class="form-label">Id Pedido:</label>
