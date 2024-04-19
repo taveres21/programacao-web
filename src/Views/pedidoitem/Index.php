@@ -17,24 +17,23 @@ if (isset($_GET['sucesso'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <title>Professores</title>
+    <title>Itens do Pedido</title>
 </head>
 
 <body>
 <a class="btn btn-secondary mt-3 ms-3" href="/">Inicio</a>
     <div class="container">
-        <h1>Professores</h1>
+        <h1>Itens do Pedido</h1>
         <div class="d-flex justify-content-end">
-        <a href="/professor/inserir" class="d-flex text-center btn-lg btn btn-primary">Novo Professor</a>
+        <a href="/pedidoitem/inserir" class="d-flex text-center btn-lg btn btn-primary">Novo Item do Pedido</a>
         </div>
         <table class="table">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
-                    <th scope="col">Nome</th>
-                    <th scope="col">Cpf</th>
-                    <th scope="col">Carga horária</th>
-                    <th scope="col">Formação</th>
+                    <th scope="col">id_pedido</th>
+                    <th scope="col">id_produto</th>
+                    <th scope="col">Valor</th>
                 </tr>
             </thead>
             <tbody>
@@ -43,10 +42,9 @@ if (isset($_GET['sucesso'])) {
                     ?>
                     <tr>
                         <td><?= $c['id'] ?></td>
-                        <td><?= $c['nome'] ?></td>
-                        <td><?= $c['cpf'] ?></td>
-                        <td><?= $c['carga_horaria'] ?></td>
-                        <td><?= $c['formacao'] ?></td>
+                        <td><?= $c['id_pedido'] ?></td>
+                        <td><?= $c['id_produto'] ?></td>
+                        <td><?= $c['valor'] ?></td>
                     </tr>
                     <?php
                 }
