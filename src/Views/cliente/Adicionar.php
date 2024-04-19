@@ -10,7 +10,7 @@
   <a class="btn btn-secondary mt-3 ms-3" href="/">Inicio</a>
     <main class="container">
         <h1>Inserir Cliente</h1>
-        <form action="/aluno/novo" method="post">
+        <form action="/Cliente/novo" method="post">
             <div class="row">
                 <div class="col-6">
                     <label for="nome" class="form-label">Nome:</label>
@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-6">
                     <label for="Ativo" class="form-label">Ativo:</label>
-                    <input type="number" name="Ativo" class="form-control" required>
+                    <input type="text" name="Ativo" class="form-control" required>
                 </div>
                 <div class="col-6">
                     <label for="cpf" class="form-label">Cpf:</label>
