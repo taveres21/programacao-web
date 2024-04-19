@@ -27,11 +27,11 @@ class PedidoItemController
         $pedidoItemDAO = new PedidoItemDAO();
         if ($pedidoItemDAO->inserir($pedidoItem)) {
             $sucesso = "Inserido com sucesso!";
-            header("Location: /pedidoitem/visualizar?sucesso=" . urlencode($sucesso));
+            header("Location: /PedidoItem/visualizar?sucesso=" . urlencode($sucesso));
             exit;
         } else {
             $falha = "Erro ao inserir!";
-            header("Location: /pedidoitem/visualizar?falha=" . urlencode($falha));
+            header("Location: /PedidoItem/visualizar?falha=" . urlencode($falha));
             exit;
         }
     }

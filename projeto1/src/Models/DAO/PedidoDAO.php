@@ -18,7 +18,7 @@ private Conexao $conexao;
         try{
             $sql = "INSERT INTO pedido (id_cliente, descricao, data, horario) VALUES (:id_cliente, :descricao, :data, :horario)";
             $p = $this->conexao->getConexao()->prepare($sql);
-            $p->bindValue(":id_cliente", $pedido->getIdCliente());  
+            $p->bindValue(":id_cliente", $pedido->getId_Cliente());  
             $p->bindValue(":descricao", $pedido->getDescricao());
             $p->bindValue(":data", $pedido->getData());
             $p->bindValue(":horario", $pedido->getHorario());
@@ -30,7 +30,7 @@ private Conexao $conexao;
 
     public function consultar(){
         try{
-            $sql = "SELECT p.*, c.nome, FROM pedido p INNER JOIN cliente c ON c.id = p.id_cliente";
+            $sql = "SELECT p.*, c.nome FROM pedido p INNER JOIN cliente c ON c.id = p.id_cliente";
             return $this->conexao->getConexao()->query($sql);
         } catch (\Exception $e){
             return 0;

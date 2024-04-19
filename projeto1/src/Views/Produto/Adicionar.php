@@ -10,7 +10,7 @@
     <h1>Inserir Produto</h1>
     <form action="/Produto/novo" method="post">
         <label for="nome" >Descrição:</label>
-        <input type="text" name="nome"required>
+        <input type="text" name="descricao"required>
         <label for="peso" >Peso:</label>
         <input type="text" name="peso"required>
 

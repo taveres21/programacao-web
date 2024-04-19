@@ -18,21 +18,21 @@ class ProdutoController
 
     public function inserir($params)
     {
-        require_once ("../src/Views/produto/Adicionar.php");
+        require_once ("../src/Views/Produto/Adicionar.php");
     }
 
 
     public function novo($params)
     {
-        $produto = new Produto(0, $_POST['descricao'], $_POST['peso'],$_POST['situacao'], 0);
+        $produto = new Produto(0, $_POST['descricao'], $_POST['peso'],$_POST['situacao']);
         $produtoDAO = new ProdutoDAO();
-        if ($produtoDAO->inserir($Produto)) {
+        if ($produtoDAO->inserir($produto)) {
             $sucesso = "Inserido com sucesso!";
-            header("Location: /produto/visualizar?sucesso=" . urlencode($sucesso));
+            header("Location: /Produto/visualizar?sucesso=" . urlencode($sucesso));
             exit;
         } else {
             $falha = "Erro ao inserir!";
-            header("Location: /produto/visualizar?falha=" . urlencode($falha));
+            header("Location: /Produto/visualizar?falha=" . urlencode($falha));
             exit;
         }
     }

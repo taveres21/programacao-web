@@ -28,7 +28,7 @@ private Conexao $conexao;
 
     public function consultar(){
         try{
-            $sql = "SELECT pi.*, p.descri, pr.descri FROM pedidoitem pi INNER JOIN pedido p ON pi.id_pedido = p.id INNER JOIN produto pr ON pi.id_produto = pr.id";
+            $sql = "SELECT pi.*, p.id id_pedido, pr.id as id_produto FROM pedidoitem pi INNER JOIN pedido p ON pi.id_pedido = p.id INNER JOIN produto pr ON pi.id_produto = pr.id";
             return $this->conexao->getConexao()->query($sql);
         } catch (\Exception $e){
             return 0;

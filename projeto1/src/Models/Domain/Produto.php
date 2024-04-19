@@ -36,7 +36,7 @@ class Produto{
         return $this->Peso;
     }
 
-    public function setPeso($Peso){
+    public function setPeso($peso){
         $this->peso = $peso;
     }
     public function getSituacao(){

@@ -35,7 +35,10 @@ class Pedido{
     }
 
     public function getDescricao(){
-        return $this->desricao;
+        return $this->descricao;
+    }
+    public function setDescricao($descricao){
+        $this->descricao = $descricao;
     }
 
     public function setNome($descricao){
@@ -52,7 +55,7 @@ class Pedido{
         return $this->horario;
     }
 
-    public function setHorario($Horario){
+    public function setHorario($horario){
         $this->horario= $horario;
     }
 

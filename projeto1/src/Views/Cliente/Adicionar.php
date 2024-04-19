@@ -12,7 +12,7 @@
         <label for="nome" >Nome:</label>
         <input type="text" name="nome"required>
         <label for="Ativo">Ativo:</label>
-        <input type="text" name="ativo"  required>
+        <input type="text" name="Ativo"  required>
         <label for="cpf" >Cpf:</label>
         <input type="text" name="cpf"  required>
         <button type="submit" >Salvar</button>

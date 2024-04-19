@@ -8,7 +8,7 @@
   <body>
       <a href="/">Inicio</a>
         <h1>Inserir Item do Pedido</h1>
-        <form action="/pedidoitem/novo" method="post">
+        <form action="/PedidoItem/novo" method="post">
             <label for="id_pedido" >Id Pedido:</label>
             <input type="number" name="id_pedido"  required>
             <label for="id_produto" >Id Produto:</label>
