@@ -1,6 +1,6 @@
 <?php return array(
     'root' => array(
-        'name' => 'php/projeto_banco',
+        'name' => 'php/projeto',
         'pretty_version' => '1.0.0+no-version-set',
         'version' => '1.0.0.0',
         'reference' => null,
@@ -10,7 +10,7 @@
         'dev' => true,
     ),
     'versions' => array(
-        'php/projeto_banco' => array(
+        'php/projeto' => array(
             'pretty_version' => '1.0.0+no-version-set',
             'version' => '1.0.0.0',
             'reference' => null,

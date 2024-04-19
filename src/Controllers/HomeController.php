@@ -1,6 +1,6 @@
 <?php
 
-namespace Php\ProjetoBanco\Controllers;
+namespace Php\Projeto\Controllers;
 
 class HomeController{
 
