@@ -1,5 +1,4 @@
 <?php
-// require '../src/Views/cabecalho.php';
 
 if (isset($_GET['sucesso'])) {
     echo "<p>" . $_GET['sucesso'] . "</p>";
@@ -34,7 +33,6 @@ if (isset($_GET['sucesso'])) {
                     <th scope="col">Nome</th>
                     <th scope="col">Cpf</th>
                     <th scope="col">Ativo</th>
-                    <!-- <th scope="col">Ações</th> -->
                 </tr>
             </thead>
             <tbody>

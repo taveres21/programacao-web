@@ -10,31 +10,24 @@
 </head>
 
 <body>
-    <div class="container mt-4">
-        <h1>Projeto</h1>
-        <div class="mt-5 row-gap-5 d-flex justify-content-between flex-wrap border border-success p-5">
-            <div class="col-6 container">
-                <h2>Cliente</h2>
-                <a href="/Cliente/visualizar" class="btn btn-primary ">Visualizar</a>
-                <a href="/Cliente/inserir" class="btn btn-success ">Adicionar</a>
-            </div>
-            <div class="col-6 container">
-                <h2>Produto</h2>
-                <a href="/Produto/visualizar" class="btn btn-primary ">Visualizar</a>
-                <a href="/Produto/inserir" class="btn btn-success ">Adicionar</a>
-            </div>
-            <div class="col-6 container">
-                <h2>Pedido</h2>
-                <a href="/Pedido/visualizar" class="btn btn-primary ">Visualizar</a>
-                <a href="/Pedido/inserir" class="btn btn-success ">Adicionar</a>
-            </div>
-            <div class="col-6 container">
-                <h2>Item do Pedido</h2>
-                <a href="PedidoItem/visualizar" class="btn btn-primary ">Visualizar</a>
-                <a href="PedidoItem/inserir" class="btn btn-success ">Adicionar</a>
-            </div>
-        </div>
-    </div>
+    <h1>Projeto</h1>
+    <h2>Cliente</h2>
+    <a href="/Cliente/visualizar" class="btn btn-primary ">Visualizar</a>
+    <a href="/Cliente/inserir" class="btn btn-success ">Adicionar</a>
+
+
+    <h2>Produto</h2>
+    <a href="/Produto/visualizar" class="btn btn-primary ">Visualizar</a>
+    <a href="/Produto/inserir" class="btn btn-success ">Adicionar</a>
+
+
+    <h2>Pedido</h2>
+    <a href="/Pedido/visualizar" class="btn btn-primary ">Visualizar</a>
+    <a href="/Pedido/inserir" class="btn btn-success ">Adicionar</a>
+
+    <h2>Item do Pedido</h2>
+    <a href="PedidoItem/visualizar" class="btn btn-primary ">Visualizar</a>
+    <a href="PedidoItem/inserir" class="btn btn-success ">Adicionar</a>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
