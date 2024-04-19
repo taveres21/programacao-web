@@ -24,7 +24,7 @@ if (isset($_GET['sucesso'])) {
     <div class="container">
         <h1>Pedido</h1>
         <div class="d-flex justify-content-end">
-        <a href="/Pedido/inserir" class="d-flex text-center btn-lg btn btn-primary">Novo Pedido</a>
+        <a href="/Pedido/inserir" class="d-flex text-center btn-lg btn btn-secondary">Novo Pedido</a>
         </div>
         <table class="table">
             <thead>

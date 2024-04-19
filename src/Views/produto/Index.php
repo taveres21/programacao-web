@@ -1,6 +1,4 @@
 <?php
-// require '../src/Views/cabecalho.php';
-
 if (isset($_GET['sucesso'])) {
     echo "<p>" . $_GET['sucesso'] . "</p>";
 } elseif (isset($_GET['falha'])) {
@@ -25,7 +23,7 @@ if (isset($_GET['sucesso'])) {
     <div class="container">
         <h1>produto</h1>
         <div class="d-flex justify-content-end">
-        <a href="/produto/inserir" class="d-flex text-center btn-lg btn btn-primary">Novo Produto</a>
+        <a href="/produto/inserir" class="d-flex text-center btn-lg btn btn-secondary">Novo Produto</a>
         </div>
         <table class="table">
             <thead>
@@ -34,7 +32,6 @@ if (isset($_GET['sucesso'])) {
                     <th scope="col">Descricao</th>
                     <th scope="col">Peso</th>
                     <th scope="col">Situacao</th>
-                    <!-- <th scope="col">Ações</th> -->
                 </tr>
             </thead>
             <tbody>
