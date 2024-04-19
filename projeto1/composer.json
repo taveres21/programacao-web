@@ -1,5 +1,5 @@
 {
-    "name": "php/projeto_banco",
+    "name": "php/projeto",
     "autoload": {
         "psr-4": {
             "Php\\ProjetoBanco\\": "src/"
