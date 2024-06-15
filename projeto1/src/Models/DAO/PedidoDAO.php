@@ -28,11 +28,54 @@ private Conexao $conexao;
         }
     }
 
+    public function alterar(Pedido $pedido)
+    {
+        try {
+            $sql = "UPDATE pedido SET descricao = :descricao, data = :data, horario = :horario
+                    WHERE id = :id";
+            $p = $this->conexao->getConexao()->prepare($sql);
+            $p->bindValue(":id", $pedido->getId());
+            $p->bindValue(":descricao", $pedido->getDescricao());
+            $p->bindValue(":data", $pedido->getData());
+            $p->bindValue(":horario", $pedido->getHorario());
+            return $p->execute();
+        } catch (\Exception $e) {
+            return 0;
+        }
+    }
+
+    public function excluir(int $id)
+    {
+        try {
+            $sql = "DELETE FROM pedido
+                    WHERE id = :id";
+            $p = $this->conexao->getConexao()->prepare($sql);
+            $p->bindValue(":id", $id);
+            return $p->execute();
+        } catch (\Exception $e) {
+            return 0;
+        }
+    }
+
+
     public function consultar(){
         try{
             $sql = "SELECT p.*, c.nome FROM pedido p INNER JOIN cliente c ON c.id = p.id_cliente";
             return $this->conexao->getConexao()->query($sql);
         } catch (\Exception $e){
+            return 0;
+        }
+    }
+
+    public function consultarPorId($id)
+    {
+        try {
+            $sql = "SELECT * FROM pedido WHERE id = :id";
+            $p = $this->conexao->getConexao()->prepare($sql);
+            $p->bindValue(":id", $id);
+            $p->execute();
+            return $p->fetch();
+        } catch (\Exception $e) {
             return 0;
         }
     }
