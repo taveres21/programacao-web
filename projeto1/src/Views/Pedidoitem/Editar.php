@@ -9,18 +9,9 @@
   <body>
       <a class="btn btn-secondary mt-3 ms-3" href="/">Inicio</a>
       <main class="container">
-        <h1>Alterar Pedido</h1>
-        <form action="/Pedido/alterado/<?= $resultado['id'] ?>" method="post">
+        <h1>Alterar Item do Pedido</h1>
+        <form action="/Pedidoitem/alterado/<?= $resultado['id'] ?>" method="post">
             <div class="row">
-                <div class="col-6">
-                <label for="id_professor" class="form-label">Professor:</label><br>
-                    <select name="id_professor" class="form-select">
-                        <option value="<?= $resultado['id_professor'] ?>" selected><?= $resultado['nome_professor'] ?></option>
-                        <?php while($c = $resultadoProfessor->fetch(PDO::FETCH_ASSOC)) { ?>
-                            <option value="<?= $c['id'];?>"><?=$c['nome']; ?></option>
-                            <?php }?>
-                    </select>
-                </div>
                 <div class="col-6">
                     <label for="nome" class="form-label">Nome:</label>
                     <input type="text" value="<?= $resultado['nome'] ?>" name="nome" class="form-control" required>

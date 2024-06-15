@@ -10,7 +10,7 @@
   <a class="btn btn-secondary mt-3 ms-3" href="/">Inicio</a>
     <main class="container">
         <h1>Alterar Cliente</h1>
-        <form action="/cliente/alterado/<?= $resultado['id'] ?>" method="post">
+        <form action="/Cliente/alterado/<?= $resultado['id'] ?>" method="post">
             <div class="row">
                 <div class="col-6">
                     <label for="nome" class="form-label">Nome:</label>

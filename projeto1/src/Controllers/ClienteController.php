@@ -22,7 +22,7 @@ class ClienteController
 
     public function novo($params)
     {
-        $cliente = new Cliente(0, $_POST['nome'], $_POST['ativo'], $_POST['cpf']);
+        $cliente = new Cliente(0, $_POST['nome'],$_POST['cpf'],$_POST['ativo']);
         $clienteDAO = new ClienteDAO();
         if ($clienteDAO->inserir($cliente)) {
             $sucesso = "Inserido com sucesso!";
@@ -55,11 +55,11 @@ class ClienteController
     public function alterado($params)
     {
         $clienteDAO = new Cliente($params[1], $_POST['nome'], $_POST['ativo'], $_POST['cpf']);
-        $clienteDAO = new ClienteDao();
+        $clienteDAO = new ClienteDAO();
         if ($clienteDAO->alterar($cliente)) {
-            header("Location: /cliente/visualizar/alterar/true");
+            header("Location: /Cliente/visualizar/alterar/true");
         } else {
-            header("Location: /cliente/visualizar/alterar/false");
+            header("Location: /Cliente/visualizar/alterar/false");
         }
     }    
     
@@ -68,16 +68,16 @@ class ClienteController
         $id = $params[1];
         $ClienteDAO = new ClienteDao();
         $resultado = $ClienteDAO->consultarPorId($id);
-        require_once ("../src/Views/cliente/Excluir.php");
+        require_once ("../src/Views/Cliente/Excluir.php");
     }
 
     public function excluido($params)
     {
         $clienteDAO = new ClienteDao();
         if ($clienteDAO->excluir($params[1])) {
-            header("Location: /cliente/visualizar/excluir/true");
+            header("Location: /Cliente/visualizar/excluir/true");
         } else {
-            header("Location: /cliente/visualizar/excluir/false");
+            header("Location: /Cliente/visualizar/excluir/false");
         }
     }
 

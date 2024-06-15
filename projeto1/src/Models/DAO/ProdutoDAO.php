@@ -64,4 +64,17 @@ private Conexao $conexao;
         }
     }
 
+    public function excluir(int $id)
+    {
+        try {
+            $sql = "DELETE FROM produto
+                    WHERE id = :id";
+            $p = $this->conexao->getConexao()->prepare($sql);
+            $p->bindValue(":id", $id);
+            return $p->execute();
+        } catch (\Exception $e) {
+            return 0;
+        }
+    }
+
 }

@@ -59,9 +59,9 @@ class ProdutoController
         $produto = new Produto($params[1], $_POST['descricao'], $_POST['peso'], $_POST['situacao']);
         $produtoDAO = new ProdutoDAO();
         if ($produtoDAO->alterar($produto)) {
-            header("Location: /produto/visualizar/alterar/true");
+            header("Location: /Produto/visualizar/alterar/true");
         } else {
-            header("Location: /produto/visualizar/alterar/false");
+            header("Location: /Produto/visualizar/alterar/false");
         }
     }
 
@@ -77,9 +77,9 @@ class ProdutoController
     {
         $produtoDAO = new ProdutoDAO();
         if ($produtoDAO->excluir($params[1])) {
-            header("Location: /produto/visualizar/excluir/true");
+            header("Location: /Produto/visualizar/excluir/true");
         } else {
-            header("Location: /produto/visualizar/excluir/false");
+            header("Location: /Produto/visualizar/excluir/false");
         }
     }
 
