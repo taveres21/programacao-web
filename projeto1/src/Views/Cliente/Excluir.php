@@ -17,7 +17,7 @@
                     <input type="text" disabled value="<?= $resultado['nome'] ?>" name="nome" class="form-control" required>
                 </div>
                 <div class="col-6">
-                    <label for="idade" class="form-label">Idade:</label>
+                    <label for="ativo" class="form-label">Ativo:</label>
                     <input type="number" disabled value="<?=  $resultado['ativo'] ?>" name="ativo" class="form-control" required>
                 </div>
                 <div class="col-6">

@@ -37,4 +37,52 @@ class ProdutoController
         }
     }
 
+    public function buscar($params)
+    {
+        $id =$_POST['id'];
+        $produtoDAO = new ProdutoDAO();
+        $resultado = $produtoDAO->consultarPorId($id);
+        require_once ("../src/Views/Produto/Index.php");
+
+    }
+
+    public function editar($params)
+    {
+        $id = $params[1];
+        $produtoDAO = new ProdutoDAO();
+        $resultado = $produtoDAO->consultarPorId($id);
+        require_once ("../src/Views/Produto/Editar.php");
+    }
+
+    public function alterado($params)
+    {
+        $produto = new Produto($params[1], $_POST['descricao'], $_POST['peso'], $_POST['situacao']);
+        $produtoDAO = new ProdutoDAO();
+        if ($produtoDAO->alterar($produto)) {
+            header("Location: /produto/visualizar/alterar/true");
+        } else {
+            header("Location: /produto/visualizar/alterar/false");
+        }
+    }
+
+    public function excluir($params)
+    {
+        $id = $params[1];
+        $produtoDAO = new ProdutoDAO();
+        $resultado = $produtoDAO->consultarPorId($id);
+        require_once ("../src/Views/Produto/Excluir.php");
+    }
+
+    public function excluido($params)
+    {
+        $produtoDAO = new ProdutoDAO();
+        if ($produtoDAO->excluir($params[1])) {
+            header("Location: /produto/visualizar/excluir/true");
+        } else {
+            header("Location: /produto/visualizar/excluir/false");
+        }
+    }
+
+
+
 }

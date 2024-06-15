@@ -34,4 +34,52 @@ class PedidoController
         }
     }
 
+    public function buscar($params)
+    {
+        $id =$_POST['id'];
+        $pedidoDAO = new PedidoDao();
+        $resultado = $pedidoDAO->consultarPorId($id);
+        require_once ("../src/Views/Pedido/Index.php");
+
+    }
+
+    public function editar($params)
+    {
+        $id = $params[1];
+        $pedidoDAO = new PedidoDAO();
+        $resultado = $pedidoDAO->consultarPorId($id);
+        require_once ("../src/Views/Pedido/Editar.php");
+    }
+
+    public function alterado($params)
+    {
+        $pedido = new Pedido($params[1], $_POST['descricao'], $_POST['data'], $_POST['horario']);
+        $pedidoDAO = new PedidoDAO();
+        if ($pedidoDAO->alterar($pedido)) {
+            header("Location: /Pedido/visualizar/alterar/true");
+        } else {
+            header("Location: /Pedido/visualizar/alterar/false");
+        }
+    }
+
+    public function excluir($params)
+    {
+        $id = $params[1];
+        $pedidoDAO = new PedidoDAO();
+        $resultado = $pedidoDAO->consultarPorId($id);
+        require_once ("../src/Views/Pedido/Excluir.php");
+    }
+
+    public function excluido($params)
+    {
+        $pedidoDAO = new PedidoDAO();
+        if ($pedidoDAO->excluir($params[1])) {
+            header("Location: /pedido/visualizar/excluir/true");
+        } else {
+            header("Location: /pedido/visualizar/excluir/false");
+        }
+    }
+
+
+
 }

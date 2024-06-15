@@ -29,6 +29,7 @@ if (isset($_GET['sucesso'])) {
                     <th scope="col">Nome</th>
                     <th scope="col">Cpf</th>
                     <th scope="col">Ativo</th>
+                    <th class="col-2 text-center">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -40,6 +41,14 @@ if (isset($_GET['sucesso'])) {
                         <td><?= $c['nome'] ?></td>
                         <td><?= $c['cpf'] ?></td>
                         <td><?= $c['ativo'] ?></td>
+                        <td>
+                            <a href="/cliente/editar/<?= $c['id'] ?>" class="btn btn-warning">
+                                Alterar
+                            </a>
+                            <a href="/cliente/excluir/<?= $c['id'] ?>" class="btn btn-danger">
+                                Excluir
+                            </a>
+                        </td>
                     </tr>
                     <?php
                 }

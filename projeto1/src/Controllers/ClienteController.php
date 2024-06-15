@@ -35,4 +35,51 @@ class ClienteController
         }
     }
 
+    public function buscar($params)
+    {
+        $id =$_POST['id'];
+        $clienteDao = new ClienteDAO();
+        $resultado = $clienteDao->consultarPorId($id);
+        require_once ("../src/Views/Cliente/Index.php");
+
+    }
+
+    public function editar($params)
+    {
+        $id = $params[1];
+        $ClienteDAO = new ClienteDAO();
+        $resultado = $ClienteDAO->consultarPorId($id);
+        require_once ("../src/Views/Cliente/Editar.php");
+    }
+
+    public function alterado($params)
+    {
+        $clienteDAO = new Cliente($params[1], $_POST['nome'], $_POST['ativo'], $_POST['cpf']);
+        $clienteDAO = new ClienteDao();
+        if ($clienteDAO->alterar($cliente)) {
+            header("Location: /cliente/visualizar/alterar/true");
+        } else {
+            header("Location: /cliente/visualizar/alterar/false");
+        }
+    }    
+    
+    public function excluir($params)
+    {
+        $id = $params[1];
+        $ClienteDAO = new ClienteDao();
+        $resultado = $ClienteDAO->consultarPorId($id);
+        require_once ("../src/Views/cliente/Excluir.php");
+    }
+
+    public function excluido($params)
+    {
+        $clienteDAO = new ClienteDao();
+        if ($clienteDAO->excluir($params[1])) {
+            header("Location: /cliente/visualizar/excluir/true");
+        } else {
+            header("Location: /cliente/visualizar/excluir/false");
+        }
+    }
+
+
 }
